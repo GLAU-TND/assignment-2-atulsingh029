@@ -23,12 +23,14 @@ public class MyMain {
         for (int a:
              insertData) {
             myBinarySearchTree.insert(a);
+            System.out.println(a);
         }
         System.out.println("Tree Traversal : ");
-        myBinarySearchTree.traverse();
-        System.out.println("Traversal of all Left Children : ");
-        myBinarySearchTree.traverseLeftChildren();
+        myBinarySearchTree.traverse(myBinarySearchTree.root);
+        System.out.println("\nTraversal of all Left Children : ");
+        myBinarySearchTree.traverseLeftChildren(myBinarySearchTree.root);
         System.out.print("Number of  nodes without left child : ");
         myBinarySearchTree.noOfNodesWithoutLeftChild();
+
     }
 }
