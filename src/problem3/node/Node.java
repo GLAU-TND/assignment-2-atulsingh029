@@ -11,4 +11,7 @@ import problem5.student.Student;
 public class Node {
     Node next;
     Student student;
+    int priority;
 }
+
+
