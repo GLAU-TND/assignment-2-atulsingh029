@@ -44,6 +44,13 @@ public class MyPriorityQueue {
         }
     }
 
+    public Node dequeue(){
+        Node temp=head;
+        head=temp.getNext();
+        return temp;
+    }
+
+
 
 
 }
