@@ -54,6 +54,15 @@ public class MyPriorityQueue {
         return head;
     }
 
+    public void displayAll(){
+        Node temp=head;
+        while (temp.getNext()!=null){
+            Student s=temp.getStudent();
+            System.out.println(s.name+"  "+s.rollNo);
+            temp=temp.getNext();
+        }
+    }
+
 
 
 }
