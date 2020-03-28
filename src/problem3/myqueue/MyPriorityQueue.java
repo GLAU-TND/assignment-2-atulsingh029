@@ -50,6 +50,9 @@ public class MyPriorityQueue {
         return temp;
     }
 
+    public Node peek(){
+        return head;
+    }
 
 
 
