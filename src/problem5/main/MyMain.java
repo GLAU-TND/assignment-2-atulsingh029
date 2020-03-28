@@ -11,6 +11,8 @@ import problem5.node.Node;
 import problem5.student.Student;
 
 //executable class
+
+/*Sir problem statement of this problem was not clear. Kindly provide clear instructions about what was supposed to be done*/
 public class MyMain {
     public static void main(String[] args) {
         MyCircularQueue myCircularQueue=new MyCircularQueue();
