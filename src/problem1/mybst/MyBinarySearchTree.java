@@ -41,19 +41,44 @@ public class MyBinarySearchTree {
     }
 
 
-        public void traverse () {
+        public void traverse (TreeNode start) {
+
 
         }
 
 
-        public void traverseLeftChildren () {
+        public void traverseLeftChildren (TreeNode start) {
+            if(start==null){
+                return;
+            }
+            System.out.print(start.getData()+"   ");
+            traverse(start.getLeftChild());
 
         }
 
 
         public int noOfNodesWithoutLeftChild () {
             int response = -1;
+
             return response;
+        }
+
+        public void preOrder(TreeNode start){
+            if(start==null){
+                return;
+            }
+            System.out.print(start.getData()+"   ");
+            traverse(start.getLeftChild());
+            traverse(start.getRightChild());
+        }
+
+        public void postOrder(TreeNode start){
+            if(start==null){
+                return;
+            }
+            traverse(start.getLeftChild());
+            traverse(start.getRightChild());
+            System.out.print(start.getData()+"   ");
         }
 
 
