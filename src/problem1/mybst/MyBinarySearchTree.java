@@ -18,6 +18,8 @@ import java.util.ArrayList;
 //noOfNodeWithoutLeftChild
 public class MyBinarySearchTree {
     public TreeNode root;
+    private int max=1;
+    private int count=0;
 
     public void insert(int data) {
         TreeNode bstNode = new TreeNode(data);
@@ -44,19 +46,47 @@ public class MyBinarySearchTree {
 
 
         public void traverse (TreeNode start) {
-
+            if(start==null){
+                return;
+            }
+            traverse(start.getLeftChild());
+            traverse(start.getRightChild());
+            System.out.print(start.getData()+"   ");
         }
 
 
         public void traverseLeftChildren (TreeNode start) {
+            leftNode(start,1);
+            //assuming root node is not first left child
 
         }
 
 
-        public int noOfNodesWithoutLeftChild () {
-            int response = -1;
+        public void leftNode(TreeNode node, int level) {
+            if (node == null) {
+                return;
+            }
+            if (max < level) {
+                System.out.print(node.getData() + " ");
 
-            return response;
+            }
+            max = level;
+            if (node.getLeftChild() == null) {
+                count++;
+                max++;
+            }
+            leftNode(node.getLeftChild(), level + 1);
+            leftNode(node.getRightChild(), level + 1);
+        }
+
+
+
+        public void noOfNodesWithoutLeftChild (TreeNode treeNode) {
+            //this if condition is for condition when this method is run before traverse left child method.
+            if(count==0){
+                leftNode(treeNode,1);
+            }
+            System.out.println(count);
         }
 
         public void preOrder(TreeNode start){
