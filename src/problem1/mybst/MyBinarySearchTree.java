@@ -76,4 +76,14 @@ public class MyBinarySearchTree {
             postOrder(start.getRightChild());
             System.out.print(start.getData()+"   ");
         }
+
+    public void getPreOrderSuccessor(TreeNode start,ArrayList<Integer> arrayList){
+        if(start==null){
+            return ;
+        }
+        arrayList.add(start.getData());
+        getPreOrderSuccessor(start.getLeftChild(),arrayList);
+        getPreOrderSuccessor(start.getRightChild(),arrayList);
+
+    }
 }
