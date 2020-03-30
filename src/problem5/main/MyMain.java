@@ -25,7 +25,7 @@ public class MyMain {
         student2.backlogs=0;
         student3.backlogs=2;
         student4.backlogs=1;
-        student5.backlogs=0;
+        student5.backlogs=1;
         myCircularQueue.enqueue(student1);
         myCircularQueue.enqueue(student2);
         myCircularQueue.enqueue(student3);
@@ -34,7 +34,9 @@ public class MyMain {
         System.out.print("Peek method student name :");
         System.out.println(myCircularQueue.peek().getData().name);
         MyCircularQueue finalQueue=processQueue(myCircularQueue);
-        System.out.print("Student without backlogs : "+finalQueue.getSize());
+        System.out.print("Number of students with exactly 1 backlog(2>backlog>0) : "+finalQueue.getSize());
+        System.out.println("\nStudents with exactly 1 backlog(2>backlog>0) : ");
+        finalQueue.viewAll();
 
 
     }
@@ -46,7 +48,7 @@ public class MyMain {
         while (size!=0){
              n=initialQ.peek();
             initialQ.dequeue();
-             if(n.getData().backlogs!=0){
+             if(n.getData().backlogs==1){
                  prQ.enqueue(n.getData());
              }
              size--;
