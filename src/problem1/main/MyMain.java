@@ -23,7 +23,7 @@ public class MyMain {
         for (int a:
              insertData) {
             myBinarySearchTree.insert(a);
-            System.out.println(a);
+            System.out.print("Inserted : "+a+"  ");
         }
         System.out.println("Tree Traversal : ");
         myBinarySearchTree.traverse(myBinarySearchTree.root);
