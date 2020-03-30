@@ -9,6 +9,8 @@ package problem1.mybst;
 
 import problem1.node.TreeNode;
 
+import java.util.ArrayList;
+
 //function to be implemented
 //insert
 //traverse
@@ -43,16 +45,10 @@ public class MyBinarySearchTree {
 
         public void traverse (TreeNode start) {
 
-
         }
 
 
         public void traverseLeftChildren (TreeNode start) {
-            if(start==null){
-                return;
-            }
-            System.out.print(start.getData()+"   ");
-            traverse(start.getLeftChild());
 
         }
 
@@ -68,19 +64,16 @@ public class MyBinarySearchTree {
                 return;
             }
             System.out.print(start.getData()+"   ");
-            traverse(start.getLeftChild());
-            traverse(start.getRightChild());
+            preOrder(start.getLeftChild());
+            preOrder(start.getRightChild());
         }
 
         public void postOrder(TreeNode start){
             if(start==null){
                 return;
             }
-            traverse(start.getLeftChild());
-            traverse(start.getRightChild());
+            postOrder(start.getLeftChild());
+            postOrder(start.getRightChild());
             System.out.print(start.getData()+"   ");
         }
-
-
-
 }
